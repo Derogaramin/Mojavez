@@ -1,0 +1,332 @@
+/* ========== متغیرهای رنگی ========== */
+:root {
+  --primary: #00B4D8;
+  --primary-dark: #0096C7;
+  --secondary: #6C757D;
+  --success: #2A9D8F;
+  --warning: #F4A261;
+  --danger: #E76F51;
+  --light: #F8F9FA;
+  --dark: #1C1C2A;
+  --body-bg: #F0F2F5;
+  --border: #DEE2E6;
+  --input-focus: #48CAE4;
+  --white: #FFFFFF;
+}
+
+/* ========== تنظیمات عمومی ========== */
+body {
+  font-family: 'Vazirmatn', 'Vazir', Tahoma, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--dark);
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+}
+
+/* ========== کارت‌ها ========== */
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  background-color: var(--white);
+}
+
+.card-header {
+  background-color: var(--light);
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+
+/* ========== دکمه‌ها ========== */
+.btn {
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-success {
+  background-color: var(--success);
+  border-color: var(--success);
+}
+
+.btn-warning {
+  background-color: var(--warning);
+  border-color: var(--warning);
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  border-color: var(--danger);
+}
+
+/* ========== فرم‌ها ========== */
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  min-height: 44px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 216, 0.25);
+}
+
+.is-invalid {
+  border-color: var(--danger) !important;
+}
+
+.invalid-feedback {
+  color: var(--danger);
+  font-size: 0.8125rem;
+}
+
+/* ========== نوار پیشرفت (Progress Bar) ========== */
+.progress {
+  height: 8px;
+  background-color: var(--border);
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+  background-color: var(--primary);
+  border-radius: 4px;
+}
+
+.step-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.step-label {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  font-weight: 400;
+}
+
+.step-label.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.step-label.completed {
+  color: var(--success);
+  font-weight: 500;
+}
+
+.step-label.completed::before {
+  content: "✓ ";
+  color: var(--success);
+}
+
+/* ========== Timeline ========== */
+.timeline {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  padding-right: 30px;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 22px;
+  width: 2px;
+  height: calc(100% + 8px);
+  background: var(--border);
+}
+
+.timeline-item:last-child::after {
+  display: none;
+}
+
+.timeline-item.cancel::before {
+  background: var(--danger);
+  box-shadow: 0 0 0 2px var(--danger);
+}
+
+.timeline-item.success::before {
+  background: var(--success);
+  box-shadow: 0 0 0 2px var(--success);
+}
+
+.timeline-item .time {
+  font-size: 0.8125rem;
+  color: var(--secondary);
+}
+
+.timeline-item .description {
+  font-size: 0.9375rem;
+  color: var(--dark);
+}
+
+/* ========== اولویت (نشان) ========== */
+.priority-badge {
+  background-color: var(--warning);
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.2em 0.8em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ========== Sidebar مدیریت ========== */
+.admin-sidebar {
+  background-color: #1E293B;
+  min-height: 100vh;
+  color: #CBD5E1;
+  width: 260px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 1rem;
+}
+
+.admin-sidebar .sidebar-header {
+  padding: 1rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1rem;
+}
+
+.admin-sidebar .nav-link {
+  color: #CBD5E1;
+  border-radius: 8px;
+  margin: 2px 12px;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.admin-sidebar .nav-link:hover,
+.admin-sidebar .nav-link.active {
+  color: #fff;
+  background-color: rgba(0,180,216,0.2);
+}
+
+.admin-main {
+  margin-right: 260px;
+  padding: 1.5rem;
+}
+
+/* ========== جدول داده‌ها ========== */
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th {
+  background-color: var(--light);
+  font-weight: 600;
+  color: var(--dark);
+  border-bottom: 2px solid var(--border);
+}
+
+.table td, .table th {
+  padding: 0.75rem 0.5rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--border);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0,180,216,0.03);
+}
+
+/* ========== آپلود فایل ========== */
+.upload-box {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.upload-box:hover {
+  border-color: var(--primary);
+  background-color: rgba(0,180,216,0.02);
+}
+
+.upload-box.has-file {
+  border-color: var(--success);
+  background-color: #f0fdf4;
+}
+
+/* ========== نسخه چاپی ========== */
+.print-container {
+  max-width: 210mm;
+  margin: 0 auto;
+  background: #fff;
+  padding: 15mm;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  .print-container {
+    padding: 0;
+    margin: 0;
+    max-width: none;
+  }
+  .page-break {
+    page-break-before: always;
+  }
+}
+
+.card.p-3.text-center.ownership-option.border-primary {
+    border: 1px solid;
+}
